@@ -1,0 +1,118 @@
+.ezy__header34_83e3F1MP {
+	/* Bootstrap variables */
+	--bs-body-bg: rgb(255, 255, 255);
+	--bs-body-bg-invert: rgb(246, 246, 246);
+
+	/* Bravo Car Deals variables */
+	--ezy-theme-color: rgb(13, 110, 253);
+	--ezy-theme-color-rgb: 13, 110, 253;
+	--ezy-body-color-invert: rgb(246, 246, 246);
+
+	background-color: var(--bs-body-bg);
+	color: var(--bs-body-color);
+	overflow: hidden;
+	position: relative;
+	padding: 60px 0 0;
+	z-index: 1;
+}
+@media (min-width: 768px) {
+	.ezy__header34_83e3F1MP {
+		padding: 100px 0 0;
+	}
+}
+
+/* Gray Block Style */
+.gray .ezy__header34_83e3F1MP,
+.ezy__header34_83e3F1MP.gray {
+	/* Bootstrap variables */
+	--bs-body-bg: rgb(246, 246, 246);
+
+	/* Bravo Car Deals variables */
+	--ezy-body-color-invert: rgb(255, 255, 255);
+}
+
+/* Dark Gray Block Style */
+.dark-gray .ezy__header34_83e3F1MP,
+.ezy__header34_83e3F1MP.dark-gray {
+	/* Bootstrap variables */
+	--bs-body-color: #ffffff;
+	--bs-body-bg: rgb(30, 39, 53);
+
+	/* Bravo Car Deals variables */
+	--ezy-body-color-invert: rgb(11, 23, 39);
+}
+
+/* Dark Block Style */
+.dark .ezy__header34_83e3F1MP,
+.ezy__header34_83e3F1MP.dark {
+	/* Bootstrap variables */
+	--bs-body-color: #ffffff;
+	--bs-body-bg: rgb(11, 23, 39);
+
+	/* Bravo Car Deals variables */
+	--ezy-body-color-invert: rgb(30, 39, 53);
+}
+
+.ezy__header34_83e3F1MP-heading {
+	font-weight: bold;
+	font-size: 32px;
+	line-height: 1.2;
+	letter-spacing: 1px;
+}
+
+@media (min-width: 991px) {
+	.ezy__header34_83e3F1MP-heading {
+		font-size: 70px;
+	}
+}
+
+.ezy__header34_83e3F1MP-sub-heading {
+	font-size: 17px;
+	line-height: 1.8;
+	opacity: 0.8;
+}
+
+.ezy__header34_83e3F1MP-shape-two {
+	position: absolute;
+	top: 20%;
+	left: 5%;
+}
+
+.ezy__header34_83e3F1MP-shape-four {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+}
+
+.ezy__header34_83e3F1MP-shape-six {
+	position: absolute;
+	right: 0;
+	top: 10%;
+}
+
+/* form */
+.ezy__header34_83e3F1MP .form-control {
+	min-height: 62px;
+	line-height: 26px;
+	border: none;
+	background: var(--ezy-body-color-invert);
+	z-index: 1;
+}
+.ezy__header34_83e3F1MP .form-control:focus {
+	z-index: 1;
+}
+.ezy__header34_83e3F1MP-btn {
+	position: absolute !important;
+	right: 10px !important;
+	top: 50% !important;
+	transform: translateY(-50%) !important;
+	padding: 10px 30px !important;
+	font-weight: 500 !important;
+	color: #fff !important;
+	background-color: var(--ezy-theme-color) !important;
+	z-index: 100 !important;
+}
+.ezy__header34_83e3F1MP-btn:hover {
+	color: #fff !important;
+	background-color: rgba(var(--ezy-theme-color-rgb)) !important;
+}

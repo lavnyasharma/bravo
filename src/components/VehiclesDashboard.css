@@ -1,0 +1,29 @@
+/* VehiclesDashboard.css */
+
+.vehicles-dashboard {
+    padding: 20px;
+  }
+  
+  .vehicle-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .vehicle-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .vehicle-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .vehicle-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .vehicle-card .card-text {
+    color: #555;
+  }
+  

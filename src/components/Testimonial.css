@@ -1,0 +1,138 @@
+.ezy__testimonial7_otOa5FTR {
+	/* Bootstrap variables */
+	--bs-body-color: #2b323c;
+	--bs-body-bg: rgb(255, 255, 255);
+
+	/* Bravo Car Deals variables */
+	--ezy-theme-color: rgb(13, 110, 253);
+	--ezy-theme-color-rgb: 13, 110, 253;
+	--ezy-item-bg: #ffffff;
+	--ezy-item-shadow: 0px 8px 44px rgba(227, 238, 255, 0.48);
+	--ezy-rating-rgb: 255, 215, 0;
+
+	background-color: var(--bs-body-bg);
+	overflow: hidden;
+	padding: 60px 0;
+}
+
+@media (min-width: 768px) {
+	.ezy__testimonial7_otOa5FTR {
+		padding: 100px 0;
+	}
+}
+
+/* Gray Block Style */
+.gray .ezy__testimonial7_otOa5FTR,
+.ezy__testimonial7_otOa5FTR.gray {
+	/* Bootstrap variables */
+	--bs-body-bg: rgb(246, 246, 246);
+
+	/* Bravo Car Deals variables */
+	--ezy-item-bg: #f6f6f6;
+	--ezy-item-shadow: 0px 4px 44px rgba(179, 209, 236, 0.37);
+}
+
+/* Dark Gray Block Style */
+.dark-gray .ezy__testimonial7_otOa5FTR,
+.ezy__testimonial7_otOa5FTR.dark-gray {
+	/* Bootstrap variables */
+	--bs-body-color: #ffffff;
+	--bs-body-bg: rgb(30, 39, 53);
+
+	/* Bravo Car Deals variables */
+	--ezy-item-bg: #232e3c;
+	--ezy-item-shadow: none;
+}
+
+/* Dark Block Style */
+.dark .ezy__testimonial7_otOa5FTR,
+.ezy__testimonial7_otOa5FTR.dark {
+	/* Bootstrap variables */
+	--bs-body-color: #ffffff;
+	--bs-body-bg: rgb(11, 23, 39);
+
+	/* Bravo Car Deals variables */
+	--ezy-item-bg: #162231;
+	--ezy-item-shadow: none;
+}
+
+.ezy__testimonial7_otOa5FTR-heading {
+	font-weight: bold;
+	font-size: 25px;
+	line-height: 25px;
+	color: var(--bs-body-color);
+}
+
+@media (min-width: 768px) {
+	.ezy__testimonial7_otOa5FTR-heading {
+		font-size: 35px;
+		line-height: 35px;
+	}
+}
+
+.ezy__testimonial7_otOa5FTR-sub-heading {
+	font-size: 18px;
+	line-height: 25px;
+	color: var(--bs-body-color);
+	opacity: 0.8;
+}
+
+.ezy__testimonial7_otOa5FTR-item {
+	background-color: var(--ezy-item-bg);
+	box-shadow: var(--ezy-item-shadow);
+	border-radius: 20px;
+	border: none;
+}
+
+.ezy__testimonial7_otOa5FTR-title {
+	color: var(--bs-body-color);
+}
+
+.ezy__testimonial7_otOa5FTR-content {
+	color: var(--bs-body-color);
+	opacity: 0.8;
+}
+
+.ezy__testimonial7_otOa5FTR-rating [class*="fa-"]:not(.active),
+.ezy__testimonial7_otOa5FTR-rating [class*="fa-"]:not(.active) * {
+	color: rgba(var(--ezy-rating-rgb), 0.2);
+}
+
+.ezy__testimonial7_otOa5FTR-rating [class*="fa-"].active,
+.ezy__testimonial7_otOa5FTR-rating [class*="fa-"].active * {
+	color: rgba(var(--ezy-rating-rgb), 1);
+}
+
+.ezy__testimonial7_otOa5FTR .carousel-inner {
+	overflow: visible;
+}
+.ezy__testimonial7_otOa5FTR .carousel {
+	display: flex;
+	flex-direction: column;
+}
+.ezy__testimonial7_otOa5FTR-dot-control,
+.ezy__testimonial7_otOa5FTR .carousel-indicators {
+	position: relative;
+	margin-top: 30px;
+	order: 2;
+}
+
+.ezy__testimonial7_otOa5FTR-dot-control span,
+.ezy__testimonial7_otOa5FTR .carousel-indicators button {
+	background-color: transparent;
+	width: 13px;
+	height: 13px;
+	border: 1px solid var(--bs-body-color);
+	border-radius: 50%;
+	display: inline-flex;
+	margin: 4px;
+	transition: all 0.3s ease-in-out;
+	transform: scale(0.7);
+	cursor: pointer;
+	opacity: 1;
+}
+.ezy__testimonial7_otOa5FTR-dot-control span.active,
+.ezy__testimonial7_otOa5FTR .carousel-indicators button.active {
+	background-color: var(--bs-body-color);
+	transform: scale(1);
+}
