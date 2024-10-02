@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Replace with your API Gateway URL
-const API_GATEWAY_URL = 'https://58r4ptemha.execute-api.eu-west-2.amazonaws.com/prod/UKApiProxy';
+const API_GATEWAY_URL = '/proxy/';
 
 // Function to send a POST request to fetch vehicle details
 const searchVehicle = async (registrationNumber) => {
