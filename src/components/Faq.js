@@ -10,31 +10,31 @@ const faqList = [
 		isActive: true,
 		question: "Can I sell my car on finance?",
 		answer:
-			"Yes, you can sell your financed car, with Motorway if it’s on a Hire Purchase (HP) or Personal Contract Purchase (PCP) agreement. You don’t have to have paid off all of the finance already; but subject to your contract, there may be a minimum repayment before you have the right to sell. If you’re ready to sell on finance, the first step is to get a settlement letter with the ‘settlement figure’ from your lender, and get a car valuation. Read more in our guide to selling your financed car.",
+			"Yes, you can sell your financed car, with bravocardeals if it’s on a Hire Purchase (HP) or Personal Contract Purchase (PCP) agreement. You don’t have to have paid off all of the finance already; but subject to your contract, there may be a minimum repayment before you have the right to sell. If you’re ready to sell on finance, the first step is to get a settlement letter with the ‘settlement figure’ from your lender, and get a car valuation. Read more in our guide to selling your financed car.",
 	},
 	{
 		isActive: false,
-		question: "Is it free to sell my car with Motorway?",
+		question: "Is it free to sell my car with bravocardeals?",
 		answer:
-			"It’s always free to value your car with zero obligations, and there are no admin, payment, collection fees, or hidden charges of any kind when you sell with us. You’ll receive your highest offer from our online daily sale, and if your car is as described during profiling, you’ll receive every penny. We take a commission fee from the dealer who buys your car, to keep Motorway completely free for our customers. See how it works here.",
+			"It’s always free to value your car with zero obligations, and there are no admin, payment, collection fees, or hidden charges of any kind when you sell with us. You’ll receive your highest offer from our online daily sale, and if your car is as described during profiling, you’ll receive every penny. We take a commission fee from the dealer who buys your car, to keep bravocardeals completely free for our customers. See how it works here.",
 	},
 	{
 		isActive: false,
 		question: "How can I sell my car fast?",
 		answer:
-			"It’s easy to sell your car fast with Motorway. It’s quick to value your vehicle and get your car ready for sale. You’ll receive your best price from over 5,000+ dealers the same day and have your car sold in as little as 24 hours. Fast, free home collection and payment also means you’ll have funds in your bank account in no time too. There’s no compromise between speed and convenience when you sell the Motorway way. Sell quickly today!",
+			"It’s easy to sell your car fast with bravocardeals. It’s quick to value your vehicle and get your car ready for sale. You’ll receive your best price from over 5,000+ dealers the same day and have your car sold in as little as 24 hours. Fast, free home collection and payment also means you’ll have funds in your bank account in no time too. There’s no compromise between speed and convenience when you sell the bravocardeals way. Sell quickly today!",
 	},
 	{
 		isActive: false,
 		question: "How much is my car worth?",
 		answer:
-			"Motorway’s smart valuation tech uses live data from the UK car market and daily sales info from our own network, so no matter when you check your used car’s value, your estimated selling price will always be accurate. Click here for a free car valuation and tracking.",
+			"bravocardeals’s smart valuation tech uses live data from the UK car market and daily sales info from our own network, so no matter when you check your used car’s value, your estimated selling price will always be accurate. Click here for a free car valuation and tracking.",
 	},
 	{
 		isActive: false,
 		question: "Who will buy my car?",
 		answer:
-			"At Motorway, dealers compete to give you their best price, and buy your car. Once your car has received competing offers from our network in the daily online sale, you can agree to sell it to the dealer who offers the highest price. ",
+			"At bravocardeals, dealers compete to give you their best price, and buy your car. Once your car has received competing offers from our network in the daily online sale, you can agree to sell it to the dealer who offers the highest price. ",
 	},
 	{
 		isActive: false,
