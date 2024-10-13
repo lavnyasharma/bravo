@@ -23,7 +23,7 @@
         "react-scripts": "4.0.3",
         "web-vitals": "^1.1.2"
     },
-    "proxy": "https://driver-vehicle-licensing.api.gov.uk",
+    "proxy": "https://18.130.164.44/",
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",

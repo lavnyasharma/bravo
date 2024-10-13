@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
-import supabase from "./supabaseClient"; // Import Supabase client
-import { searchVehicle } from "./api"; // Import your API function
+import { useNavigate } from "react-router-dom";
+import supabase from "./supabaseClient";
+import { searchVehicle } from "./api";
 import "./Hero.css";
 
 const Shapes = () => (
@@ -11,13 +11,13 @@ const Shapes = () => (
   </>
 );
 
-const SubscribeForm = ({ handleSearch, registrationNumber, setRegistrationNumber }) => (
+const SubscribeForm = ({ handleSearch, registrationNumber, setRegistrationNumber, error }) => (
   <Form>
     <Form.Group className="mt-4 mb-0">
       <InputGroup className="d-flex justify-content-center position-relative">
         <input
           type="text"
-          className="form-control rounded-pill ps-4 w-100"
+          className={`form-control rounded-pill ps-4 w-100 ${error ? "is-invalid" : ""}`}
           placeholder="Enter registration number"
           value={registrationNumber}
           onChange={(e) => setRegistrationNumber(e.target.value)}
@@ -29,6 +29,7 @@ const SubscribeForm = ({ handleSearch, registrationNumber, setRegistrationNumber
         >
           Search
         </Button>
+        {error && <div className="invalid-feedback">Invalid registration number. Please try again.</div>}
       </InputGroup>
     </Form.Group>
   </Form>
@@ -37,15 +38,16 @@ const SubscribeForm = ({ handleSearch, registrationNumber, setRegistrationNumber
 const Hero = () => {
   const [goUp, setGoUp] = useState(false);
   const [registrationNumber, setRegistrationNumber] = useState("");
-  const navigate = useNavigate(); // Initialize useNavigate
+  const [error, setError] = useState(null); // State for error handling
+  const navigate = useNavigate();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleSearch = async () => {
+    setError(null); // Clear previous errors
     try {
-      // First, search for the vehicle using the external API
       const data = await searchVehicle(registrationNumber);
   
       if (data) {
@@ -67,14 +69,13 @@ const Hero = () => {
           dateoflastv5cissued: data.dateOfLastV5CIssued,
           realdrivingemissions: data.realDrivingEmissions,
           wheelplan: data.wheelplan,
-          monthoffirstregistration: data.monthOfFirstRegistration
+          monthoffirstregistration: data.monthOfFirstRegistration,
         };
   
         if (!mappedData.registrationnumber) {
           throw new Error("Registration number is missing");
         }
   
-        // Check if the vehicle is already in the database
         const { data: existingVehicle } = await supabase
           .from("vehicles")
           .select("*")
@@ -86,7 +87,6 @@ const Hero = () => {
           return;
         }
   
-        // If not, insert or update the vehicle data in the database
         const { error } = await supabase
           .from("vehicles")
           .upsert(mappedData, { onConflict: ["registrationnumber"] });
@@ -98,10 +98,14 @@ const Hero = () => {
         navigate("/form", { state: { registrationNumber, vehicleData: mappedData } });
       }
     } catch (error) {
-      console.error("Error handling search:", error);
+      if (error.response?.status === 400) {
+        // Check if the error is due to invalid registration number
+        setError("Invalid registration number format. Please try again.");
+      } else {
+        console.error("Error handling search:", error);
+      }
     }
   };
-  
 
   useEffect(() => {
     const onPageScroll = () => {
@@ -143,6 +147,7 @@ const Hero = () => {
                   handleSearch={handleSearch}
                   registrationNumber={registrationNumber}
                   setRegistrationNumber={setRegistrationNumber}
+                  error={error} // Pass error to the SubscribeForm
                 />
               </Col>
             </Row>
