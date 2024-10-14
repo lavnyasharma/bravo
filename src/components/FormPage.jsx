@@ -50,12 +50,34 @@ function FormPage() {
       return;
     }
 
+    // Check if the vehicle record exists
+    const { data: vehicleData, error: vehicleError } = await supabase
+      .from('vehicles')
+      .select('*')
+      .eq('registrationnumber', registrationNumber);
+
+    if (vehicleError) {
+      console.error('Error fetching vehicle data:', vehicleError);
+      setLoading(false);
+      return;
+    }
+
+    if (vehicleData.length === 0) {
+      console.error('No vehicle found with the given registration number.');
+      setLoading(false); // Hide loader if there's an error
+      return;
+    }
+
+    // Upload images and store the URLs
     let imageUrls = [];
     for (let image of images) {
+      // Sanitize the file name to be URL-safe
+      const sanitizedFileName = `${Date.now()}_${image.name.replace(/\s+/g, '_').replace(/[^\w\-\.]/g, '')}`; 
+
       const { data: uploadData, error: uploadError } = await supabase
         .storage
         .from('car-images')
-        .upload(`public/${image.name}`, image);
+        .upload(`public/${sanitizedFileName}`, image);
 
       if (uploadError) {
         console.error('Error uploading image:', uploadError);
@@ -63,9 +85,10 @@ function FormPage() {
         return;
       }
 
-      imageUrls.push(`${supabaseUrl}/storage/v1/object/public/car-images/public/${image.name}`);
+      imageUrls.push(`${supabaseUrl}/storage/v1/object/public/car-images/public/${sanitizedFileName}`);
     }
 
+    // Update vehicle record with new data
     const { error: updateError } = await supabase
       .from('vehicles')
       .update({

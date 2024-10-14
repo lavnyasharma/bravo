@@ -47,7 +47,15 @@ function InterestReceived() {
     return <div>Loading...</div>;
   }
 
-  const imageUrls = JSON.parse(vehicleData.image_urls);
+  // Safely parse image URLs
+  let imageUrls = [];
+  if (vehicleData.image_urls) {
+    try {
+      imageUrls = JSON.parse(vehicleData.image_urls);
+    } catch (error) {
+      console.error("Error parsing image URLs:", error);
+    }
+  }
 
   return (
     <>
@@ -58,24 +66,25 @@ function InterestReceived() {
           <Row>
             <Col lg={6}>
               <div className="me-lg-4">
-                <div
-                  className="ezy__epoverview17-image-wrapper text-center rounded-3 overflow-hidden m-2 p-4"
-                  style={{
-                    backgroundColor: "#f0f0f0", // Greyish background
-                    // boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Subtle shadow for depth
-                  }}
-                >
-                  <img
-                    src={imageUrls[index].trim()}
-                    alt={`Vehicle Image ${index + 1}`}
-                    className="ezy__epoverview17-banner img-fluid"
+                {imageUrls.length > 0 && (
+                  <div
+                    className="ezy__epoverview17-image-wrapper text-center rounded-3 overflow-hidden m-2 p-4"
                     style={{
-                      maxHeight: "400px",
-                      objectFit: "contain",
-                      margin: "auto",
-                    }} // Larger image with contained fit
-                  />
-                </div>
+                      backgroundColor: "#f0f0f0", // Greyish background
+                    }}
+                  >
+                    <img
+                      src={imageUrls[index].trim()}
+                      alt={`Vehicle Image ${index + 1}`}
+                      className="ezy__epoverview17-banner img-fluid"
+                      style={{
+                        maxHeight: "400px",
+                        objectFit: "contain",
+                        margin: "auto",
+                      }} // Larger image with contained fit
+                    />
+                  </div>
+                )}
                 <Nav className="d-flex flex-wrap justify-content-center ezy__epoverview17-gallery mt-3">
                   {imageUrls.map((url, i) => (
                     <li
