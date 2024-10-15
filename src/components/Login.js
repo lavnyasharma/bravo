@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useAuth } from "../AuthContext";
 import { useNavigate } from "react-router-dom";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import Navigation1_tRoDi3Ka from "../components/NavigationBar";
+import Footer2_wa59NKzY from "../components/Footer";
 
 import "./Login.css";
 
@@ -90,7 +92,9 @@ const Login = () => {
   };
 
   return (
-    <section className="login-section d-flex align-items-center justify-content-center">
+    <>
+    <Navigation1_tRoDi3Ka/>
+       <section className="login-section d-flex align-items-center justify-content-center">
       <Container>
         <Row className="justify-content-center">
           <Col lg={8} className="py-4 py-lg-5">
@@ -105,6 +109,9 @@ const Login = () => {
         </Row>
       </Container>
     </section>
+    <Footer2_wa59NKzY/>
+    </>
+ 
   );
 };
 
