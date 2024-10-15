@@ -13,26 +13,32 @@ const Shapes = () => (
 
 const SubscribeForm = ({ handleSearch, registrationNumber, setRegistrationNumber, error }) => (
   <Form>
-    <Form.Group className="mt-4 mb-0">
-      <InputGroup className="d-flex justify-content-center position-relative">
-        <input
-          type="text"
-          className={`form-control rounded-pill ps-4 w-100 ${error ? "is-invalid" : ""}`}
-          placeholder="Enter registration number"
-          value={registrationNumber}
-        onChange={(e) => setRegistrationNumber(e.target.value.toUpperCase())}
-        />
+  <Form.Group className="mt-4 mb-0">
+    <Row className="align-items-center">
+      <Col xs={9}>
+        <InputGroup className="position-relative">
+          <input
+            type="text"
+            className={`form-control rounded-pill ps-4 ${error ? "is-invalid" : ""}`}
+            placeholder="Enter registration number"
+            value={registrationNumber}
+            onChange={(e) => setRegistrationNumber(e.target.value.toUpperCase())} // Convert to uppercase
+          />
+          {error && <div className="invalid-feedback">Invalid registration number. Please try again.</div>}
+        </InputGroup>
+      </Col>
+      <Col xs={3}>
         <Button
           variant=""
-          className="ezy__header34_83e3F1MP-btn rounded-pill"
+          className="ezy__header34_83e3F1MP-btn rounded-pill w-100"
           onClick={handleSearch}
         >
           Search
         </Button>
-        {error && <div className="invalid-feedback">Invalid registration number. Please try again.</div>}
-      </InputGroup>
-    </Form.Group>
-  </Form>
+      </Col>
+    </Row>
+  </Form.Group>
+</Form>
 );
 
 const Hero = () => {
