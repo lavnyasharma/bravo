@@ -36,7 +36,7 @@ const NavigationBar = () => {
       <img
         src="/logo.svg"
         alt="Icon"
-        style={{ width: '150px', height: '100px', cursor: 'pointer' }}  // Icon size and styling
+        style={{ width: '150px', height: '150px', cursor: 'pointer' }}  // Icon size and styling
       />
     </div>
 					<Navbar.Toggle aria-controls="ezy__nav1_tRoDi3Ka-navbar-nav">

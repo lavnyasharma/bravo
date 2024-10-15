@@ -111,6 +111,8 @@
 	color: #fff !important;
 	background-color: var(--ezy-theme-color) !important;
 	z-index: 100 !important;
+	display: flex;
+    justify-content: center;
 }
 .ezy__header34_83e3F1MP-btn:hover {
 	color: #fff !important;
