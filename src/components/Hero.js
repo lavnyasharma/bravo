@@ -20,7 +20,7 @@ const SubscribeForm = ({ handleSearch, registrationNumber, setRegistrationNumber
           className={`form-control rounded-pill ps-4 w-100 ${error ? "is-invalid" : ""}`}
           placeholder="Enter registration number"
           value={registrationNumber}
-          onChange={(e) => setRegistrationNumber(e.target.value)}
+        onChange={(e) => setRegistrationNumber(e.target.value.toUpperCase())}
         />
         <Button
           variant=""
