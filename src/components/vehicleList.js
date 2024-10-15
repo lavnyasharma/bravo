@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 import "./VehiclesDashboard.css";
-import { fetchVehicles } from './fetchVehicles';
+import { fetchVehicles, deleteVehicle } from './fetchVehicles'; // Assuming deleteVehicle function exists
 
 const VehiclesList = () => {
   const [vehicles, setVehicles] = useState([]);
@@ -18,6 +18,14 @@ const VehiclesList = () => {
 
     getVehicleData();
   }, []);
+
+  const handleDelete = async (vehicleId) => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this vehicle?");
+    if (confirmDelete) {
+      await deleteVehicle(vehicleId); // Calling the delete function
+      setVehicles((prevVehicles) => prevVehicles.filter(vehicle => vehicle.id !== vehicleId)); // Updating the list after deletion
+    }
+  };
 
   if (loading) {
     return <p>Loading...</p>;
@@ -50,6 +58,13 @@ const VehiclesList = () => {
                   <Card.Text>Registration Number: {vehicle.registrationnumber}</Card.Text>
                   <Button variant="primary" onClick={() => handleViewDetails(vehicle.id)}>
                     View Details
+                  </Button>
+                  <Button
+                    variant="danger"
+                    className="ms-2"
+                    onClick={() => handleDelete(vehicle.id)}
+                  >
+                    Delete
                   </Button>
                 </Card.Body>
               </Card>
