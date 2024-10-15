@@ -21,7 +21,7 @@ const features = [
 		title: "Complete your sale",
 		description:
 			"Complete your sale in as little as 24 hours, with home collection and fast payment.† All completely free.",
-		image: "https://static.motorway.co.uk/static/assets_seller/step_3.5ddd9a60c2683acdc7f3.avif",
+		image: "https://ewsorupyhavslsemnmhd.supabase.co/storage/v1/object/public/car-images/images.jpeg",
 	},
 ];
 

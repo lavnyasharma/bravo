@@ -80,6 +80,9 @@
 
 .ezy__featured13_cD0kkuo3-banner {
 	border-radius: 10px;
+	width: 100%; /* Make the image responsive */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; 
 }
 
 .ezy__featured13_cD0kkuo3-title {

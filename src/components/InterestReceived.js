@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import supabase from "./supabaseClient";
+// import iconImage from './assets/icon.png'; 
 import {
   Button,
   Col,
@@ -141,14 +142,22 @@ function InterestReceived() {
                     type="button"
                     className="ezy__epoverview17-fav d-inline-flex align-items-center text-decoration-none"
                   >
-                    <FontAwesomeIcon icon={faHeart} className="fs-5" />
+                    {/* <FontAwesomeIcon icon={faHeart} className="fs-5" /> */}
+                    <div style={{ display: 'inline-block' }}>
+      {/* Using the image as an icon */}
+      <img
+        src="/handshake.png"
+        alt="Icon"
+        style={{ width: '50px', height: '50px', cursor: 'pointer' }}  // Icon size and styling
+      />
+    </div>
                   </Button>
                   <Button
                     variant="link"
                     type="button"
                     className="ezy__epoverview17-share d-inline-flex align-items-center text-decoration-none"
                   >
-                    <FontAwesomeIcon icon={faShareAlt} className="fs-5" />
+                    {/* <FontAwesomeIcon icon={faShareAlt} className="fs-5" /> */}
                   </Button>
                 </Col>
               </Row>

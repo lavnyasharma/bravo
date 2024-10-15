@@ -31,7 +31,14 @@ const NavigationBar = () => {
 		<div className="ezy__nav1_tRoDi3Ka">
 			<Navbar expand="lg" className="py-3">
 				<Container>
-					<Navbar.Brand href="/">Bravo car deals</Navbar.Brand>
+				<div style={{ display: 'inline-block' }}>
+      {/* Using the image as an icon */}
+      <img
+        src="/logo.svg"
+        alt="Icon"
+        style={{ width: '50px', height: '50px', cursor: 'pointer' }}  // Icon size and styling
+      />
+    </div>
 					<Navbar.Toggle aria-controls="ezy__nav1_tRoDi3Ka-navbar-nav">
 						<span>
 							<span />
