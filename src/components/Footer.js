@@ -31,11 +31,11 @@ const jobInfo = [
 
 const contactUs = [
 	{
-		value: "Sylhet, Bangladesh",
+		value: "United Kingdom",
 		href: "#!",
 	},
 	{
-		value: "contact@easyfrontend.com",
+		value: "bravocardeals14@gmail.com",
 		href: "#!",
 	},
 	{
@@ -162,14 +162,14 @@ const Footer = () => {
 							))}
 						</Nav>
 					</Col>
-					<Col sm={6} lg={2} className="mt-4 mt-lg-0">
+					{/* <Col sm={6} lg={2} className="mt-4 mt-lg-0">
 						<h5>Job Info</h5>
 						<Nav className="flex-column ezy__footer2_wa59NKzY-quick-links">
 							{jobInfo.map((job, i) => (
 								<JobInfo job={job} key={i} />
 							))}
 						</Nav>
-					</Col>
+					</Col> */}
 					<Col sm={6} lg={2} className="mt-4 mt-lg-0">
 						<h5>Contact Us</h5>
 						<Nav className="flex-column ezy__footer2_wa59NKzY-quick-links">

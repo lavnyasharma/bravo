@@ -126,7 +126,7 @@ function InterestReceived() {
               </div>
 
               <Row className="align-items-center">
-                <Col className="d-flex">
+                {/* <Col className="d-flex">
                   <Button
                     variant=""
                     type="button"
@@ -134,7 +134,7 @@ function InterestReceived() {
                   >
                     Contact Us
                   </Button>
-                </Col>
+                </Col> */}
                 <Col sm="auto">
                   <Button
                     variant="link"
