@@ -45,7 +45,8 @@ const VehicleDetails = () => {
     { level: "Mileage", value: `${vehicle.carmileage} miles` },
   ];
 
-  const imageUrls = JSON.parse(vehicle.image_urls);
+  // Check if images exist and parse them if available
+  const imageUrls = vehicle.image_urls ? JSON.parse(vehicle.image_urls) : [];
 
   return (
     <Container>
@@ -53,17 +54,29 @@ const VehicleDetails = () => {
         <Col lg={8}>
           <h5 className="fs-4 fw-bold mb-4">Vehicle Details</h5>
 
-          <Carousel>
-            {imageUrls.map((url, index) => (
-              <Carousel.Item key={index}>
-                <img
-                  className="d-block w-100"
-                  src={url}
-                  alt={`Vehicle image ${index + 1}`}
-                />
-              </Carousel.Item>
-            ))}
-          </Carousel>
+          {/* Display Carousel if images are available, else show a placeholder */}
+          {imageUrls.length > 0 ? (
+            <Carousel>
+              {imageUrls.map((url, index) => (
+                <Carousel.Item key={index}>
+                  <img
+                    className="d-block w-100"
+                    src={url}
+                    alt={`Vehicle image ${index + 1}`}
+                  />
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          ) : (
+            <div className="text-center">
+              <p>No images available for this vehicle.</p>
+              <img
+                src="https://via.placeholder.com/760x360?text=No+Vehicle+Image"
+                alt="Placeholder"
+                className="img-fluid"
+              />
+            </div>
+          )}
 
           <Table className="mt-4">
             <tbody>
