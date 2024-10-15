@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 import "./VehiclesDashboard.css";
+import Navigation1_tRoDi3Ka from "../components/NavigationBar"
 import { fetchVehicles, deleteVehicle } from './fetchVehicles'; // Assuming deleteVehicle function exists
+import Footer2_wa59NKzY from "../components/Footer"
 
 const VehiclesList = () => {
   const [vehicles, setVehicles] = useState([]);
@@ -40,7 +42,9 @@ const VehiclesList = () => {
   };
 
   return (
-    <Container className="vehicles-dashboard">
+    <>
+              <Navigation1_tRoDi3Ka/>
+      <Container className="vehicles-dashboard">
       <h5 className="fs-4 fw-bold mb-4 text-center">Vehicle Dashboard</h5>
       <Row>
         {vehicles.map((vehicle) => {
@@ -73,6 +77,9 @@ const VehiclesList = () => {
         })}
       </Row>
     </Container>
+    <Footer2_wa59NKzY/>
+    </>
+  
   );
 };
 

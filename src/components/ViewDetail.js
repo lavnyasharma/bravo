@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col, Table, Carousel } from "react-bootstrap";
 import { fetchVehicleById } from './fetchVehicles';  // Function to fetch a single vehicle by ID
+import Navigation1_tRoDi3Ka from "../components/NavigationBar"
+import Footer2_wa59NKzY from "../components/Footer"
 
 const VehicleDetails = () => {
   const { id } = useParams();
@@ -49,7 +51,9 @@ const VehicleDetails = () => {
   const imageUrls = vehicle.image_urls ? JSON.parse(vehicle.image_urls) : [];
 
   return (
-    <Container>
+    <>
+     <Navigation1_tRoDi3Ka/>
+       <Container>
       <Row className="justify-content-center">
         <Col lg={8}>
           <h5 className="fs-4 fw-bold mb-4">Vehicle Details</h5>
@@ -95,6 +99,10 @@ const VehicleDetails = () => {
         </Col>
       </Row>
     </Container>
+    <Footer2_wa59NKzY/>
+    </>
+    
+ 
   );
 };
 
